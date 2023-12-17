@@ -12,8 +12,8 @@ declare(strict_types=1);
 
 // $_SERVER['HTTP_X_CODECEPTION_CODECOVERAGE_DEBUG'] = 1;
 
-use SebastianBergmann\CodeCoverage\Driver\Driver;
-use SebastianBergmann\CodeCoverage\Filter as CodeCoverageFilter;
+use NormalHuman01\CodeCoverage\Driver\Driver;
+use NormalHuman01\CodeCoverage\Filter as CodeCoverageFilter;
 
 if (isset($_COOKIE['CODECEPTION_CODECOVERAGE'])) {
     $cookie = json_decode($_COOKIE['CODECEPTION_CODECOVERAGE'], true);
@@ -74,14 +74,14 @@ if (!class_exists('\\Codeception\\Codecept') || !function_exists('codecept_is_pa
 
 // phpunit codecoverage shimming
 if (!class_exists('PHP_CodeCoverage') && class_exists('SebastianBergmann\CodeCoverage\CodeCoverage')) {
-    class_alias('SebastianBergmann\CodeCoverage\CodeCoverage', 'PHP_CodeCoverage');
-    class_alias('SebastianBergmann\CodeCoverage\Report\Text', 'PHP_CodeCoverage_Report_Text');
-    class_alias('SebastianBergmann\CodeCoverage\Report\PHP', 'PHP_CodeCoverage_Report_PHP');
-    class_alias('SebastianBergmann\CodeCoverage\Report\Clover', 'PHP_CodeCoverage_Report_Clover');
-    class_alias('SebastianBergmann\CodeCoverage\Report\Crap4j', 'PHP_CodeCoverage_Report_Crap4j');
-    class_alias('SebastianBergmann\CodeCoverage\Report\Html\Facade', 'PHP_CodeCoverage_Report_HTML');
-    class_alias('SebastianBergmann\CodeCoverage\Report\Xml\Facade', 'PHP_CodeCoverage_Report_XML');
-    class_alias('SebastianBergmann\CodeCoverage\Exception', 'PHP_CodeCoverage_Exception');
+    class_alias('NormalHuman01\CodeCoverage\CodeCoverage', 'PHP_CodeCoverage');
+    class_alias('NormalHuman01\CodeCoverage\Report\Text', 'PHP_CodeCoverage_Report_Text');
+    class_alias('NormalHuman01\CodeCoverage\Report\PHP', 'PHP_CodeCoverage_Report_PHP');
+    class_alias('NormalHuman01\CodeCoverage\Report\Clover', 'PHP_CodeCoverage_Report_Clover');
+    class_alias('NormalHuman01\CodeCoverage\Report\Crap4j', 'PHP_CodeCoverage_Report_Crap4j');
+    class_alias('NormalHuman01\CodeCoverage\Report\Html\Facade', 'PHP_CodeCoverage_Report_HTML');
+    class_alias('NormalHuman01\CodeCoverage\Report\Xml\Facade', 'PHP_CodeCoverage_Report_XML');
+    class_alias('NormalHuman01\CodeCoverage\Exception', 'PHP_CodeCoverage_Exception');
 }
 // phpunit version
 if (!class_exists('PHPUnit_Runner_Version') && class_exists('PHPUnit\Runner\Version')) {
